@@ -88,7 +88,7 @@
 
     .bottom-nav {
         position: sticky;
-        bottom: 500px;
+        /* bottom: 500px; */
         left: 0;
         /* width: 100%; */
         background: rgba(255, 255, 255, 0.94);
