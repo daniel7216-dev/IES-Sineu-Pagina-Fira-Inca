@@ -46,7 +46,7 @@
         box-shadow: var(--shadow);
         border-radius: 36px;
         overflow: hidden;
-        position: relative;
+        /* position: relative; */
         backdrop-filter: blur(12px);
     }
 
@@ -87,8 +87,8 @@
     }
 
     .bottom-nav {
-        position: absolute;
-        bottom: 0;
+        position: sticky;
+        bottom: 500px;
         left: 0;
         /* width: 100%; */
         background: rgba(255, 255, 255, 0.94);
@@ -127,8 +127,7 @@
         /* make sure no default margin */
     }
 
-    .bottom-nav a p,
-    .bottom-nav a div {
+    .bottom-nav a p, .bottom-nav a div {
         margin: 0;
         margin-bottom: 10px;
         /* in case text is inside a span/p */
