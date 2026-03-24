@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APP_FEMPO – Google Play</title>
+  <link rel="stylesheet" href="style/app.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <img src="media/image.png" alt="Logo" style="height:40px;" />
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- APP HEADER -->
+  <div class="app-header">
+    <div class="app-icon">
+      <!-- Chat/connection icon -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+      </svg>
+    </div>
+    <div class="app-info">
+      <h1>APP_FEMPO</h1>
+      <div class="developer">Jaume Sampol Alcover</div>
+    </div>
+  </div>
+
+
+  <!-- INSTALL BUTTON -->
+  <button class="btn-install">Instal·lar</button>
+
+
+  <!-- INFO PILLS -->
+  <div class="info-pills">
+    <div class="pill">
+      <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+      Aquesta app està disponible per al teu dispositiu
+    </div>
+    <div class="pill">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Pots compartir-la amb la teva institució educativa
+    </div>
+  </div>
+
+  <!-- SCREENSHOTS -->
+  <div class="screenshots-section">
+    <div class="screenshots-wrapper">
+      <!-- Demo GIF (apareix primer, com un vídeo de previsualització) -->
+      <div class="screenshot screenshot-demo">
+        <img src="media/apps/jaume/APP_FEMPO/demo.gif" alt="Demo APP_FEMPO" />
+      </div>
+      <div class="screenshot">
+        <img src="media/apps/jaume/APP_FEMPO/inici de sessió.png" alt="Inici de sessió" />
+      </div>
+      <div class="screenshot">
+        <img src="media/apps/jaume/APP_FEMPO/xat.png" alt="Xat" />
+      </div>
+      <div class="screenshot">
+        <img src="media/apps/jaume/APP_FEMPO/xat_detall.png" alt="Detall del xat" />
+      </div>
+      <div class="screenshot">
+        <img src="media/apps/jaume/APP_FEMPO/consular_ra-s_alumne.png" alt="Consultar RA's alumne" />
+      </div>
+      <div class="screenshot">
+        <img src="media/apps/jaume/APP_FEMPO/registre_jornada.png" alt="Registre de jornada" />
+      </div>
+      <div class="screenshot">
+        <img src="media/apps/jaume/APP_FEMPO/empreses.png" alt="Empreses" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section-header">
+    <h2>Sobre aquesta app</h2>
+    <a href="#">
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+    </a>
+  </div>
+
+  <p class="about-text">
+    <strong>APP_FEMPO</strong> és una aplicació mòbil dissenyada per facilitar la comunicació i el seguiment de les pràctiques en centres de treball (FCT/Dual) dels cicles formatius de Formació Professional.
+  </p>
+  <p class="about-text">
+    Connecta els tres actors principals del procés formatiu:
+    <strong>professorat tutor</strong>, <strong>alumnat en pràctiques</strong> i <strong>empresari o tutor d'empresa</strong>, en un mateix espai digital.
+  </p>
+  <p class="about-text">
+    Amb APP_FEMPO podràs:
+  </p>
+  <p class="about-text">
+    • Comunicar-te en temps real mitjançant xat directe entre tutor, alumne i empresa.<br>
+    • Registrar i consultar les jornades diàries de pràctiques de l'alumnat.<br>
+    • Fer el seguiment dels Resultats d'Aprenentatge (RA) de cada alumne.<br>
+    • Consultar el llistat d'empreses col·laboradores i les seves dades.<br>
+    • Gestionar tota la documentació del procés de pràctiques des del mòbil.
+  </p>
+
+  <!-- APP INFO -->
+  <div class="app-info-section">
+    <div class="section-header">
+      <h2>Informació de l'app</h2>
+    </div>
+    <div class="info-table">
+      <div class="info-row"><span class="key">Desenvolupador</span><span class="val">Feta per en Jaume</span></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img src="" id="lightboxImg" alt="" />
+</div>
+
+<script>
+  const lightbox    = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn    = document.getElementById('lightboxClose');
+
+  // Obrir en clicar qualsevol imatge del carrusel
+  document.querySelectorAll('.screenshot img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+
+  // Tancar
+  closeBtn.addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) lightbox.classList.remove('open');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  });
+</script>
+</body>
+</html>
