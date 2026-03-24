@@ -88,9 +88,7 @@
 
     .bottom-nav {
         position: sticky;
-        /* bottom: 500px; */
         left: 0;
-        /* width: 100%; */
         background: rgba(255, 255, 255, 0.94);
         border: 1px solid rgba(31, 29, 26, 0.08);
         box-shadow: 0 14px 30px rgba(31, 29, 26, 0.1);
