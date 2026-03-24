@@ -96,15 +96,46 @@
         border: 1px solid rgba(31, 29, 26, 0.08);
         box-shadow: 0 14px 30px rgba(31, 29, 26, 0.1);
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        padding: 10px 8px;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 4px 8px;
+        /* even smaller outer padding */
         backdrop-filter: blur(10px);
+        gap: 2px;
+        /* very small gap between columns */
+        position: relative;
+
     }
 
-    .descripcio {
-        left: 14px;
-        right: 14px;
+    .bottom-nav a {
+        text-align: center;
+        padding: 2px 0;
+        /* almost no vertical padding */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        /* tiny gap between image and text */
+        line-height: 1;
+        /* prevent extra line height */
+        color: black;
+        font-style: normal;
     }
-    .imatges img{
-        width:5vw;
+
+    .bottom-nav img {
+        width: 2vw;
+        display: block;
+        /* removes any inline image spacing */
+        margin: 0;
+        /* make sure no default margin */
+    }
+
+    .bottom-nav a p,
+    .bottom-nav a div {
+        margin: 0;
+        margin-bottom: 10px;
+        /* in case text is inside a span/p */
+        padding: 0;
+        font-size: 0.75rem;
+        /* optional: smaller text if needed */
     }
