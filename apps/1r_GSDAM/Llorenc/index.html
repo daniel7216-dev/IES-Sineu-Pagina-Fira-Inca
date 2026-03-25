@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tres en Ratlla - Llorenç Gaya Pasqual</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <img src="../../../media/logo.png" alt="Logo" style="height:40px;" />
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- APP HEADER -->
+  <div class="app-header">
+    <div class="app-icon" style="background: #ffffff; border: 1px solid #e8eaed;">
+      <img src="media/logo.png" alt="Logo del joc" style="width: 100%; height: 100%; object-fit: contain;" />
+    </div>
+    <div class="app-info">
+      <h1>Tres en Ratlla</h1>
+      <div class="developer">Llorenç Gaya Pasqual</div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value">3x3</div>
+      <div class="stat-label">Tauler</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">2</div>
+      <div class="stat-label">Jugadors</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">X / O</div>
+      <div class="stat-label">Fitxes</div>
+    </div>
+  </div>
+
+  <!-- INSTALL BUTTON -->
+  <button class="btn-install">Descarregar</button>
+
+  <!-- INFO PILLS -->
+  <div class="info-pills">
+    <div class="pill">
+      <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+      Aquesta app està disponible per al teu dispositiu
+
+    </div>
+    <div class="pill">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Pots compartir-la amb la teva institució educativa
+
+    </div>
+  </div>
+
+  <!-- SCREENSHOTS -->
+  <div class="screenshots-section">
+    <div class="screenshots-wrapper">
+      <div class="screenshot screenshot-demo">
+        <img src="media/image0.png" alt="Pantalla principal del joc" />
+      </div>
+      <div class="screenshot">
+        <img src="media/image1.png" alt="Pantalla del tauler de joc" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section-header">
+    <h2>Sobre aquesta app</h2>
+    <a href="#">
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+    </a>
+  </div>
+
+  <p class="about-text">
+    <strong>Tres en Ratlla</strong> es una aplicacio basada en el joc classic de tauler per a dos jugadors. Cada jugador col·loca el seu simbol, <strong>X</strong> o <strong>O</strong>, amb l'objectiu d'aconseguir tres marques en linia.
+  </p>
+  <p class="about-text">
+    Aquesta versio del projecte presenta una interfície visual clara, un tauler interactiu i control automatic de l'estat de la partida per saber si hi ha victoria o empat.
+  </p>
+  <p class="about-text">
+    Amb aquesta app podras:
+  </p>
+  <p class="about-text">
+    • Jugar partides rapides entre dos jugadors.<br>
+    • Veure de qui es el torn en cada moment.<br>
+    • Rebre un avis quan hi ha un guanyador o un empat.<br>
+    • Reiniciar la partida per tornar a començar facilment.
+  </p>
+
+  <!-- APP INFO -->
+  <div class="app-info-section">
+    <div class="section-header">
+      <h2>Informacio de l'app</h2>
+    </div>
+    <div class="info-table">
+      <div class="info-row"><span class="key">Nom</span><span class="val">Tres en Ratlla</span></div>
+      <div class="info-row"><span class="key">Desenvolupador</span><span class="val">Llorenç Gaya Pasqual</span></div>
+      <div class="info-row"><span class="key">Tipus</span><span class="val">Joc de tauler</span></div>
+      <div class="info-row"><span class="key">Mode</span><span class="val">2 jugadors</span></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img src="" id="lightboxImg" alt="" />
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+
+  document.querySelectorAll('.screenshot img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) lightbox.classList.remove('open');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  });
+</script>
+</body>
+</html>

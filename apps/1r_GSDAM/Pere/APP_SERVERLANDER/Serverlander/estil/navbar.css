@@ -1,0 +1,33 @@
+ul.nav{
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+position: sticky;
+
+}
+
+ul.nav li#inav{
+  float: left;
+  background-color: rgb(155, 53, 53);
+
+}
+
+ul.nav img{
+  float: left;
+}
+
+ul.nav li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+  }
+  ul.nav li a:hover {
+background-color: aqua;
+  }
+
+
+  ul.nav li.dreta {float: right;}

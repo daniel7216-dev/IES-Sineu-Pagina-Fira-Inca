@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario de Pirotecnia</title>
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #000000;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #b22222;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: auto;
+            background: rgb(0, 0, 0);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline {
+            margin: 20px 0;
+            padding: 20px;
+            border-left: 4px solid #b22222;
+        }
+
+        .timeline h3 {
+            color: #b22222;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #cc0000;
+            color: rgb(0, 0, 0);
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: hsl#cc0000;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 15px;
+            display: none; /* Oculto por defecto */
+            margin-top: 30px; /* Ajusta el valor según el espacio que quieras */
+
+        }
+
+        .instagram-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .instagram-logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .email-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }   
+        .email-logo {
+            width: 40px;
+            height: 40px;
+        }
+        .movil-logo {
+            width: 40px;
+            height: 40px;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px; /* Separa los dos logos */
+            margin-top: 20px;
+        }
+        
+        .map-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        iframe {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            border: 0;
+            border-radius: 8px;
+            margin-bottom: 50px; /* Ajusta este valor para el espacio entre el iframe y el pie de página */
+
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 50%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 1rem;
+            border: 1px solid #b22222;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: hsl#cc0000;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 15px;
+            display: none; /* Oculto por defecto */
+            margin-top: 60px; /* Ajusta el valor según el espacio que quieras */
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/favicon.ico" alt="Pirotecnia Jorda Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inici</a></li>
+                <li><a href="historia.html">Història</a></li>
+                <li><a href="productos.html">Petardos/Fuentes</a></li>
+                <li><a href="productos2.html">Voladores</a></li>
+                <li><a href="productos3.html">Baterias</a></li>
+                <li><a href="contacte.html">Contacte</a></li>
+               
+            </ul>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Nuestro Horario de Atención</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Horario de Apertura</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lunes</td>
+                    <td>9:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Martes</td>
+                    <td>9:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Miércoles</td>
+                    <td>9:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Jueves</td>
+                    <td>9:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Viernes</td>
+                    <td>9:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Sábado</td>
+                    <td>10:00 AM - 4:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Domingo</td>
+                    <td>Cerrado</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <div style="height: 100px;"></div>
+    <footer class="footer" id="footer" >
+        <p>&copy; 2025 Pirotecnia Jorda. Todos los derechos reservados.
+            <a href="../politica-cookies.html">Política de Cookies</a> | 
+            <a href="../aviso-legal.html">Aviso Legal</a>
+        </p>
+    </footer>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            let footer = document.getElementById("footer");
+            let scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+            
+            if (window.scrollY >= scrollTotal) {
+                footer.style.display = "block"; 
+            } else {
+                footer.style.display = "none"; 
+            }
+        });
+    </script>
+</body>
+</html>

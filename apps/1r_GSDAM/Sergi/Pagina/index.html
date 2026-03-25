@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirotècnia Jordà</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #b22222;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: auto;
+            background: rgb(0, 0, 0);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline {
+            margin: 20px 0;
+            padding: 20px;
+            border-left: 4px solid #b22222;
+        }
+
+        .timeline h3 {
+            color: #b22222;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #cc0000;
+            color: rgb(0, 0, 0);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/favicon.ico" alt="Pirotecnia Jorda Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="pagines/historia.html">Història</a></li>
+                <li><a href="pagines/productos.html">Petardos/Fuentes</a></li>
+                <li><a href="pagines/productos2.html">Voladores</a></li>
+                <li><a href="pagines/productos3.html">Bateries</a></li>
+                <li><a href="pagines/contacte.html">Contacte</a></li>
+                <li><a href="pagines/Horario.html">Horario</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section>
+            <h2>Benvinguts a Pirotècnia Jordà</h2>
+            <p>Experts en espectacles pirotècnics des de fa dècades.</p>
+            <img src="img/focs.jpg" alt="Espectacle de focs artificials">
+        </section>
+    </main>
+
+    <div style="height: 50px;"></div>
+    <footer class="footer" id="footer">
+        <p>&copy; 2025 Pirotecnia Jordà. Tots els drets reservats.
+            <a href="politica-cookies.html">Política de Cookies</a> | 
+            <a href="aviso-legal.html">Avís Legal</a>
+        </p>
+
+    </footer>
+
+    <!-- Bloqueador de fons -->
+    <div id="cookie-overlay" style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+        display: none;
+    "></div>
+
+    <!-- Banner de cookies -->
+    <div id="cookie-banner" style="
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #000000;
+        border: 2px solid #b22222;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        color: #b22222;
+        font-family: Arial, sans-serif;
+        z-index: 9999;
+        box-shadow: 0 0 20px #b22222;
+        display: none;
+    ">
+        <h2>Ús de Cookies</h2>
+        <p>A <strong>Pirotècnia Jordà</strong> fem servir cookies pròpies i de tercers per millorar la teva experiència.</p>
+        <p>Pots acceptar o rebutjar l’ús de cookies no essencials.</p>
+
+        <div style="margin-top: 20px;">
+            <button onclick="acceptCookies()" style="
+                background-color: #b22222;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                margin: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+            ">Acceptar</button>
+
+            <button onclick="rejectCookies()" style="
+                background-color: transparent;
+                color: #b22222;
+                border: 2px solid #b22222;
+                padding: 10px 20px;
+                margin: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+            ">Rebutjar</button>
+        </div>
+
+        <p style="margin-top: 20px;">
+            <a href="politica-cookies.html" style="color: #b22222; text-decoration: underline;">Més informació</a>
+        </p>
+    </div>
+
+    <!-- Exemple de script bloquejat (Google Analytics) -->
+    <script type="text/plain" class="cookie-script analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script type="text/plain" class="cookie-script analytics">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX');
+    </script>
+
+    <script>
+        function enableCookieScripts() {
+            const scripts = document.querySelectorAll('script.cookie-script');
+            scripts.forEach(script => {
+                const newScript = document.createElement('script');
+                if (script.dataset.src) {
+                    newScript.src = script.dataset.src;
+                } else {
+                    newScript.textContent = script.textContent;
+                }
+                script.parentNode.replaceChild(newScript, script);
+            });
+        }
+
+        function acceptCookies() {
+            localStorage.setItem("cookies-choice", "accepted");
+            enableCookieScripts();
+            hideCookieBanner();
+        }
+
+        function rejectCookies() {
+            localStorage.setItem("cookies-choice", "rejected");
+            hideCookieBanner();
+        }
+
+        function hideCookieBanner() {
+            document.getElementById("cookie-banner").style.display = "none";
+            document.getElementById("cookie-overlay").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        window.onload = function () {
+            if (!localStorage.getItem("cookies-choice")) {
+                document.getElementById("cookie-banner").style.display = "block";
+                document.getElementById("cookie-overlay").style.display = "block";
+                document.body.style.overflow = "hidden";
+            } else if (localStorage.getItem("cookies-choice") === "accepted") {
+                enableCookieScripts();
+            }
+        };
+
+        window.addEventListener("scroll", function () {
+            let footer = document.getElementById("footer");
+            let scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+            footer.style.display = window.scrollY >= scrollTotal ? "block" : "none";
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+
+
