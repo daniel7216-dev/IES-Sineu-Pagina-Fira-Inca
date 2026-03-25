@@ -291,6 +291,77 @@ footer img {
     fill: #bdc1c6;
 }
 
+/* ── CYCLE SUMMARY ── */
+.cycle-summary {
+    background: #fff;
+    border: 1px solid #e8eaed;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.cycle-summary__desc {
+    font-size: 14px;
+    color: #3c4043;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.cycle-summary__stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.cycle-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cycle-stat__value {
+    font-size: 20px;
+    font-weight: 500;
+    color: #01875f;
+}
+
+.cycle-stat__label {
+    font-size: 11px;
+    color: #5f6368;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+}
+
+.cycle-summary__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #01875f;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background .15s;
+    flex-shrink: 0;
+}
+
+.cycle-summary__cta:hover {
+    background: #005c41;
+}
+
+.cycle-summary__cta svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+}
+
 footer {
     position: sticky;
     bottom: 0;
