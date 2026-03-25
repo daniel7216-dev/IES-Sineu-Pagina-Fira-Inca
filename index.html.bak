@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pàgina IES Sineu</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <h1>
+        <table>
+            <tr>
+                <td>
+                    <img src="media/logo.png" alt="img">
+                </td>
+                <td>
+                    Ies sineu
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    Dep informatica
+                </td>
+            </tr>
+        </table>
+    </h1>
+    <div class="topnav">
+        <a href="#home" class="active">Logo</a>
+        <!-- Navigation links (hidden by default) -->
+        <div id="myLinks">
+            <a href="pages/centre.html">Centre</a>
+            <a href="pages/departament.html">Departament</a>
+            <a href="pages/certificats.html">Certificats</a>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="menu()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <h2>
+        Marc Mas
+    </h2>
+    <table>
+        <td>
+            
+        </td>
+        <td>
+            img2
+        </td>
+        <td>
+            img3
+        </td>
+    </table>
+
+    <footer>
+        Pagina fet per l'IES Sineu
+    </footer>
+</body>
+
+</html>
