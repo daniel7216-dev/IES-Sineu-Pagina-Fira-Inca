@@ -1,0 +1,28 @@
+
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+}
+th, td {
+
+    padding: 8px;
+    text-align: left;
+}
+
+ul {
+    margin: 10px 0;
+    padding-left: 20px;
+
+}
+div {
+    margin-bottom: 30px;
+}
+
+p, h3, h2{
+margin-left: 30px;
+}
