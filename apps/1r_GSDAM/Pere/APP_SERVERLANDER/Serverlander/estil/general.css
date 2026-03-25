@@ -1,0 +1,83 @@
+html,
+body {
+    height: 100%;
+    /* Asegura que el body ocupe toda la altura */
+    display: flex;
+    flex-direction: column;
+    /* Organiza los elementos en columna */
+}
+
+
+
+body {
+    background-image: url(../fotos/Skilandersfoto2.jpg);
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: center;
+    background-position-x: center;
+    background-position-y: top;
+    margin-left: 1%;
+    /*FER QUE AL FERSE LA PESTANYA DEL NAVEGADOR MÉS PETITA, ELS ESPAIS ENTRE LA TAULA ES MANTENGUIN SIMÈTRICS*/
+    margin-right: 1%;
+    /*FER QUE AL FERSE LA PESTANYA DEL NAVEGADOR MÉS PETITA, ELS ESPAIS ENTRE LA TAULA ES MANTENGUIN SIMÈTRICS*/
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.titolalt {
+    text-align: center;
+    color: rgb(223, 13, 13);
+}
+
+main {
+    flex: 1;
+    /* Main ocupa tot l'espai disponible.*/
+}
+
+div {
+    background-color: rgba(240, 248, 255, 0.8);
+    /*Establir color i opacitat del div.*/
+    padding: 5%;
+    box-shadow: 5px 5px 10px;
+    padding-left: 3px;
+    position: relative;
+    /*Permet que els elements dins del div (com p.tcent) es posicionin de manera absoluta respecte a él.*/
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+p {
+    margin-bottom: 10px;
+    /* Espaciado entre párrafos */
+}
+
+p.llarg,
+p.tcent {
+    position: relative;
+    /* Asegura que los párrafos se coloquen en flujo normal */
+    display: block;
+    /* Separa los párrafos en líneas distintas */
+}
+
+p.tcent {
+    position: absolute;
+    /*Saca el párrafo del flujo normal del documento y lo posiciona de forma absoluta dentro del div (porque el div tiene position: relative;).*/
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centra perfectamente */
+    text-align: center;
+}
+
+
+footer {
+
+    background-color: #1d0101;
+    color: white;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
