@@ -1,0 +1,17 @@
+body{
+
+    background-image: url(../fotos/Skilandersfoto2.jpg);
+    background-size:cover;
+    background-repeat: repeat-y;
+    background-position: center;
+    background-position-x: center;
+    background-position-y: top;
+    margin-left: 1%;/*FER QUE AL FERSE LA PESTANYA DEL NAVEGADOR MÉS PETITA, ELS ESPAIS ENTRE LA TAULA ES MANTENGUIN SIMÈTRICS*/
+    margin-right: 1%;/*FER QUE AL FERSE LA PESTANYA DEL NAVEGADOR MÉS PETITA, ELS ESPAIS ENTRE LA TAULA ES MANTENGUIN SIMÈTRICS*/
+}
+
+img.fanart{
+
+    padding: 15px;
+
+}
