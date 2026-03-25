@@ -1,0 +1,179 @@
+<!DOCTYPE html> 
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La nostra Història - Pirotècnia Jordà</title>
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #b22222;
+        }
+
+
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .content {
+            max-width: 900px;
+            margin: auto;
+            background: rgb(0, 0, 0);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion {
+            margin: 10px 0;
+        }
+        .accordion button {
+            background-color: #b22222;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .panel {
+            padding: 0 15px;
+            display: none;
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+            border: 1px solid #b22222;
+            border-radius: 5px;
+        }
+
+        .timeline {
+            margin: 20px 0;
+            padding: 20px;
+            border-left: 4px solid #b22222;
+        }
+
+        .timeline h3 {
+            color: #b22222;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #cc0000;
+            color: rgb(0, 0, 0);
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: hsl#cc0000;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 15px;
+            display: none; /* Oculto por defecto */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/favicon.ico" alt="Pirotècnia Jordà Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inici</a></li>
+             
+                <li><a href="productos.html">Petardos/Fuentes</a></li>
+                <li><a href="productos2.html">Voladores</a></li>
+                <li><a href="productos3.html">Baterias</a></li>
+                <li><a href="contacte.html">Contacte</a></li>
+                <li><a href="Horario.html">Horario</a></li>
+            </ul>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.accordion button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const panel = button.nextElementSibling;
+                    const isActive = panel.style.display === 'block';
+
+                    document.querySelectorAll('.panel').forEach(p => p.style.display = 'none');
+
+                    if (!isActive) panel.style.display = 'block';
+                });
+            });
+        });
+    </script>
+
+    <main class="content">
+        <h1>Historia de Pirotecnia Jordà</h1>
+
+        <div class="timeline">
+            <h3>Inicio de la Pirotecnia</h3>
+            <p>Somos Pirotecnia Jordà, una empresa familiar ubicada en Lloret de Vistalegre, Mallorca, con una trayectoria que se remonta a más de 80 años. Nuestro fundador, Martí Jordà Munar, inició esta aventura en 1940, convirtiéndonos en pioneros en la fabricación y diseño de fuegos artificiales en las Islas Baleares.</p>
+
+            <h3>Nuestros Comienzos</h3>
+            <p>Desde nuestros comienzos, nos hemos dedicado a la artesanía pirotécnica, creando espectáculos que han iluminado las celebraciones de numerosos municipios y eventos privados en la región. A lo largo de las décadas, hemos evolucionado, incorporando nuevas tecnologías y adaptándonos a las cambiantes normativas del sector, pero siempre manteniendo nuestro compromiso con la calidad y la seguridad.</p>
+
+            <h3>Actualidad</h3>
+            <p>Actualmente, la tercera generación de nuestra familia continúa al frente del negocio, combinando la tradición que heredamos con innovaciones modernas para ofrecer experiencias pirotécnicas memorables. Nuestra reputación nos ha permitido participar en eventos de gran envergadura, consolidándonos como un referente en el ámbito pirotécnico de Mallorca.</p>
+        </div>
+
+        
+
+    </div>
+
+    </main>
+
+    <div style="height: 50px;"></div>
+    <footer class="footer" id="footer" >
+        <p>&copy; 2025 Pirotecnia Jorda. Todos los derechos reservados.
+            <a href="../politica-cookies.html">Política de Cookies</a> | 
+            <a href="../aviso-legal.html">Aviso Legal</a>
+        </p>
+    </footer>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            let footer = document.getElementById("footer");
+            let scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+            
+            if (window.scrollY >= scrollTotal) {
+                footer.style.display = "block"; 
+            } else {
+                footer.style.display = "none"; 
+            }
+        });
+    </script>
+</body>
+</html>

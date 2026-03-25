@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petardos - Pirotecnia Jorda</title>
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .product-card {
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .product-card .content {
+            padding: 20px;
+        }
+
+        .product-card .content h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-card .content p {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #777;
+        }
+
+        .product-card .content .price {
+            font-size: 1.2em;
+            color: #E63946;
+            font-weight: bold;
+            font-size: 1.5em; color: #E63946; font-weight: bold;
+        }
+
+        .product-card .content .btn {
+            background-color: #E63946;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .product-card .content .btn:hover {
+            background-color: #F1FAEE;
+            color: #E63946;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: 100%;
+            }
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: hsl#cc0000;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 15px;
+            display: none; /* Oculto por defecto */
+        }
+
+        .product-card img {
+    width: 50%;  /* Hace que todas las imágenes ocupen el ancho del contenedor */
+    height: 300px;  /* Altura fija para todas */
+    object-fit: cover;  /* Recorta la imagen para llenar el espacio sin distorsionarla */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+}
+body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            color: black;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: rgb(255, 255, 255);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+        details {
+            background: #e6e6e6;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .video-container {
+            margin-top: 5px;
+            text-align: center;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/favicon.ico" alt="Pirotecnia Jorda Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inici</a></li>
+                <li><a href="historia.html">Història</a></li>
+                <li><a href="productos.html">Petardos/Fuentes</a></li>
+
+                <li><a href="productos3.html">Baterias</a></li>
+                <li><a href="contacte.html">Contacte</a></li>
+                <li><a href="Horario.html">Horario</a></li>
+            </ul>
+            </ul>
+        </nav>
+    </header>
+
+    
+        <main>
+            <h1 class="section-title">Voladores</h1>
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <img src="../img/volador pluton.jpg" alt="Cohetes">
+                <div class="content">
+                    <h3>Volador Pluton</h3>
+                    <details>
+                        <summary>Detalles</summary>
+                        <ul>
+                            <li><strong>Tipo de producto:</strong> Voladores </li>
+                            <li><strong>Número de Voladores:</strong> 5</li>
+                            <li><strong>Efectos:</strong> Efectos de palmeras de diversos efectos multicolores y cracker. </li>
+                            <li><strong>Modo de encendido:</strong> Mecha de seguridad</li>
+                            <li><strong>Uso:</strong> Exclusivamente en exteriores, en un área despejada</li>
+                            <li><strong>Medidas de seguridad:</strong> Mantener distancia de seguridad recomendada</li>
+                        </ul>
+                    </details>
+                    <details class="video-container">
+                        <summary>Ver Video del volador</summary>
+                        <iframe width="470" height="315" src="https://www.youtube.com/embed/DfEn8y5PsEE?si=HXdUwxmqreLGhkgW" frameborder="0" allowfullscreen></iframe>
+                    </details>
+                    <span class="price">49,99€</span>
+                    
+                </div>
+            </div>
+
+            <!-- Producto 3 --> 
+            <div class="product-card">
+                <img src="../img/volador marte.jpg" alt="Rockets">
+                <div class="content">
+                    <h3>Volador Marte</h3>
+                    <details>
+                        <summary>Detalles</summary>
+                        <ul>
+                            <li><strong>Tipo de producto:</strong> Voladores </li>
+                            <li><strong>Número de Voladores:</strong> 5</li>
+                            <li><strong>Efectos:</strong> Efectos de palmeras de colores. </li>
+                            <li><strong>Modo de encendido:</strong> Mecha de seguridad</li>
+                            <li><strong>Uso:</strong> Exclusivamente en exteriores, en un área despejada</li>
+                            <li><strong>Medidas de seguridad:</strong> Mantener distancia de seguridad recomendada</li>
+                        </ul>
+                    </details>
+                    <details class="video-container">
+                        <summary>Ver Video del volador</summary>
+                        <iframe width="470" height="315" src="https://www.youtube.com/embed/5bT0d6jfi00?si=ZuXVcax5hpn4W0cV" frameborder="0" allowfullscreen></iframe>
+                    </details>
+                    <span class="price">39,99€</span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <img id="product-image" src="../img/volador color Nº7.png" alt="Cohetes">
+            <div class="content">
+                <h3>Volador Color 
+                    <select id="volador-select" onchange="updateProductDetails()">
+                        <option value="10" 
+                            data-image="../img/volador color Nº7.png" 
+                            data-count="10"
+                            data-price="28€"
+                            data-effects="hola Efectos de color y al final de su recorrido explotan formando una gran palmera de colores."
+                            data-video="https://www.youtube.com/embed/DfEn8y5PsEE">
+                            Nº10
+                        </option>
+                        <option value="7" 
+                            data-image="../img/volador color Nº7.png" 
+                            data-count="7"
+                            data-price="26€"
+                            data-effects="Destellos dorados y explosión final en rojo y azul."
+                            data-video="https://www.youtube.com/embed/EXAMPLE_VIDEO_7">
+                            Nº7
+                        </option>
+                        <option value="5" 
+                            data-image="../img/volador color Nº7.png" 
+                            data-count="5"
+                            data-price="15€"
+                            data-effects="Explosión en plata y chispas doradas."
+                            data-video="https://www.youtube.com/embed/EXAMPLE_VIDEO_5">
+                            Nº5
+                        </option>
+                    </select>
+                </h3>
+        
+                <details id="details-section">
+                    <summary>Detalles</summary>
+                    <ul>
+                        <li><strong>Tipo de producto:</strong> Voladores </li>
+                        <li><strong>Número de Voladores:</strong> <span id="count">5</span></li>
+                        <li><strong>Efectos:</strong> <span id="effects">Efectos de color y al final de su recorrido explotan formando una gran palmera de colores.</span></li>
+                        <li><strong>Modo de encendido:</strong> Mecha de seguridad</li>
+                        <li><strong>Uso:</strong> Exclusivamente en exteriores, en un área despejada</li>
+                        <li><strong>Medidas de seguridad:</strong> Mantener distancia de seguridad recomendada</li>
+                    </ul>
+                </details>
+        
+                <details class="video-container">
+                    <summary>Ver Video del volador</summary>
+                    <iframe id="video-frame" width="470" height="315" src="https://www.youtube.com/embed/DfEn8y5PsEE" frameborder="0" allowfullscreen></iframe>
+                </details>
+        
+                <span class="price" id="price">52€</span>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../img/volador sauce.png" alt="Cohetes">
+            <div class="content">
+                <h3>Volador sauce</h3>
+                <details>
+                    <summary>Detalles</summary>
+                    <ul>
+                        <li><strong>Tipo de producto:</strong> Voladores </li>
+                        <li><strong>Número de Voladores:</strong> 5</li>
+                        <li><strong>Efectos:</strong> Efectos  de color y al final de su recorrido explotan formando una gran palmera de colores.</li>
+                        <li><strong>Modo de encendido:</strong> Mecha de seguridad</li>
+                        <li><strong>Uso:</strong> Exclusivamente en exteriores, en un área despejada</li>
+                        <li><strong>Medidas de seguridad:</strong> Mantener distancia de seguridad recomendada</li>
+                    </ul>
+                </details>
+                <details class="video-container">
+                    <summary>Ver Video del volador</summary>
+                    <iframe width="470" height="315" src="https://www.youtube.com/embed/DfEn8y5PsEE?si=HXdUwxmqreLGhkgW" frameborder="0" allowfullscreen></iframe>
+                </details>
+                <span class="price">28€</span>
+                
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="../img/volador kamuro Nº7.png" alt="Cohetes">
+            <div class="content">
+                <h3>Volador Kamuro </h3>
+                <details>
+                    <summary>Detalles</summary>
+
+                    <ul>
+                        <li><strong>Tipo de producto:</strong> Voladores </li>
+                        <li><strong>Número de Voladores:</strong> 5</li>
+                        <li><strong>Efectos:</strong> Efectos  de color y al final de su recorrido explotan formando una gran palmera de colores.</li>
+                        <li><strong>Modo de encendido:</strong> Mecha de seguridad</li>
+                        <li><strong>Uso:</strong> Exclusivamente en exteriores, en un área despejada</li>
+                        <li><strong>Medidas de seguridad:</strong> Mantener distancia de seguridad recomendada</li>
+                    </ul>
+                </details>
+                <details class="video-container">
+                    <summary>Ver Video del volador</summary>
+                    <iframe width="470" height="315" src="https://www.youtube.com/embed/DfEn8y5PsEE?si=HXdUwxmqreLGhkgW" frameborder="0" allowfullscreen></iframe>
+                </details>
+                <span class="price">28€</span>
+                
+            </div>
+        </div>
+
+
+        <div class="product-card">
+  <img id="volador trueno " src="../img/volador trueno nº8.png" alt="Cohetes" width="100%">
+  <div class="content">
+    <h3>Volador Trueno 
+      <select id="volador-select" onchange="updateProductDetails()">
+        <option value="8" 
+          data-image="../img/volador trueno nº8.png" 
+          data-count="8"
+          data-price="52€"
+          data-effects="Efectos de color y al final de su recorrido explotan formando una gran palmera de colores."
+          data-video="https://www.youtube.com/embed/DfEn8y5PsEE">
+          Nº8
+        </option>
+        <option value="7" 
+          data-image="../img/volador trueno nº7.png"
+          data-count="7" 
+          data-price="15€"
+          data-effects="Destellos dorados y explosión final en rojo y azul."
+          data-video="https://www.youtube.com/embed/EXAMPLE_VIDEO_7">
+          Nº7
+        </option>
+        <option value="5" 
+          data-image="../img/volador trueno nº5.png"
+          data-count="5" 
+          data-price="44€"
+          data-effects="Explosión en plata y chispas doradas."
+          data-video="https://www.youtube.com/embed/EXAMPLE_VIDEO_5">
+          Nº5
+        </option>
+      </select>
+    </h3>
+
+    <details id="details-section">
+      <summary>Detalles</summary>
+      <ul>
+        <li><strong>Tipo de producto:</strong> Voladores </li>
+        <li><strong>Número de Voladores:</strong> <span id="count">8</span></li>
+        <li><strong>Efectos:</strong> <span id="effects">Efectos de color y al final de su recorrido explotan formando una gran palmera de colores.</span></li>
+        <li><strong>Modo de encendido:</strong> Mecha de seguridad</li>
+        <li><strong>Uso:</strong> Exclusivamente en exteriores, en un área despejada</li>
+        <li><strong>Medidas de seguridad:</strong> Mantener distancia de seguridad recomendada</li>
+      </ul>
+    </details>
+
+    <details class="video-container">
+      <summary>Ver Video del volador</summary>
+      <iframe id="video-frame" width="470" height="315" src="https://www.youtube.com/embed/DfEn8y5PsEE" frameborder="0" allowfullscreen></iframe>
+    </details>
+
+    <span class="price" id="price">52€</span>
+  </div>
+</div>
+
+        <div class="product-card">
+            <img src="../img/Andromeda.png" alt="Cohetes">
+            <div class="content">
+                <h3>Volador Andromeda</h3>
+                <details>
+                    <summary>Detalles</summary>
+                    <ul>
+                        <li><strong>Tipo de producto:</strong> Voladores </li>
+                        <li><strong>Número de Voladores:</strong> 5</li>
+                        <li><strong>Efectos:</strong> Efectos  de estela de color extra gran, cada volador es d’un color diferent.</li>
+                        <li><strong>Modo de encendido:</strong> Mecha de seguridad</li>
+                        <li><strong>Uso:</strong> Exclusivamente en exteriores, en un área despejada</li>
+                        <li><strong>Medidas de seguridad:</strong> Mantener distancia de seguridad recomendada</li>
+                    </ul>
+                </details>
+                <details class="video-container">
+                    <summary>Ver Video del volador</summary>
+                    <iframe width="470" height="315" src="https://www.youtube.com/embed/8DYondTA4LA?si=WbgGIS_hEInEyQBs" frameborder="0" allowfullscreen></iframe>
+                </details>
+                <span class="price">55€</span>
+                
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <img src="../img/neptuno.png" alt="Cohetes">
+            <div class="content">
+                <h3>Volador Neptuno</h3>
+                <details>
+                    <summary>Detalles</summary>
+                    <ul>
+                        <li><strong>Tipo de producto:</strong> Voladores </li>
+                        <li><strong>Número de Voladores:</strong> 5</li>
+                        <li><strong>Efectos:</strong> Efectos  de efecto de palmeras de colores.</li>
+                        <li><strong>Modo de encendido:</strong> Mecha de seguridad</li>
+                        <li><strong>Uso:</strong> Exclusivamente en exteriores, en un área despejada</li>
+                        <li><strong>Medidas de seguridad:</strong> Mantener distancia de seguridad recomendada</li>
+                    </ul>
+                </details>
+                <details class="video-container">
+                    <summary>Ver Video del volador</summary>
+                    <iframe width="470" height="315" src="https://www.youtube.com/embed/z_MrNEY3QVM?si=NP7-lN9j7tAWDCK4" frameborder="0" allowfullscreen></iframe>
+                </details>
+                <span class="price">18€</span>
+                
+            </div>
+        </div>
+
+    </main>
+   
+    <div style="height: 50px;"></div>
+
+    <footer class="footer" id="footer" >
+        <p>&copy; 2025 Pirotecnia Jorda. Todos los derechos reservados.
+            <a href="../politica-cookies.html">Política de Cookies</a> | 
+            <a href="../aviso-legal.html">Aviso Legal</a>
+        </p>
+    </footer>
+
+    <script>
+function updateProductDetails() {
+  const select = document.getElementById("volador-select");
+  const option = select.options[select.selectedIndex];
+
+  document.getElementById("product-image").src = option.dataset.image;
+  document.getElementById("count").textContent = option.dataset.count;
+  document.getElementById("effects").textContent = option.dataset.effects;
+  document.getElementById("video-frame").src = option.dataset.video;
+  document.getElementById("price").textContent = option.dataset.price;
+}
+
+
+
+window.addEventListener('mouseover', initLandbot, { once: true });
+        window.addEventListener('touchstart', initLandbot, { once: true });
+        var myLandbot;
+        function initLandbot() {
+          if (!myLandbot) {
+            var s = document.createElement('script');
+            s.type = "module"
+            s.async = true;
+            s.addEventListener('load', function() {
+              var myLandbot = new Landbot.Livechat({
+                configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2918085-ONENK58S99UQROL2/index.json',
+              });
+            });
+            s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+
+        window.addEventListener("scroll", function() {
+            let footer = document.getElementById("footer");
+            let scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+            
+            if (window.scrollY >= scrollTotal) {
+                footer.style.display = "block"; 
+            } else {
+                footer.style.display = "none"; 
+            }
+        });
+        
+        function updateProductDetails() {
+    let select = document.getElementById("volador-select");
+    let selectedOption = select.options[select.selectedIndex];
+    
+    // Guardar si los detalles estaban abiertos o cerrados antes del cambio
+    let detailsSection = document.getElementById("details-section");
+    let wasDetailsOpen = detailsSection.open;
+
+    // Actualizar los detalles del producto
+    document.getElementById("product-image").src = selectedOption.getAttribute("data-image");
+    document.getElementById("price").innerText = selectedOption.getAttribute("data-price");
+    document.getElementById("count").innerText = selectedOption.getAttribute("data-count");
+    document.getElementById("caliber").innerText = selectedOption.getAttribute("data-caliber");
+    document.getElementById("height").innerText = selectedOption.getAttribute("data-height");
+    document.getElementById("duration").innerText = selectedOption.getAttribute("data-duration");
+    document.getElementById("effects").innerText = selectedOption.getAttribute("data-effects");
+    document.getElementById("video-frame").src = selectedOption.getAttribute("data-video");
+
+    // Restaurar el estado anterior de los detalles
+    detailsSection.open = wasDetailsOpen;
+}
+    </script>
+</body>
+</html>
