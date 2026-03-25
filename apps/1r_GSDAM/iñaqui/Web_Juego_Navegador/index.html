@@ -1,29 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego navegador demo</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joc de plataforma DEMO - Google Play</title>
+  <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <div id="game">
-  <div id="player" class="player"></div>
 
-  <!-- Suelo -->
-  <div class="platform" style="left: 0; top: 500px; width: 2000px;"></div>
+<!-- NAV -->
+<nav class="nav">
+  <img src="../../../media/logo.png" alt="Logo" style="height:40px;" />
+</nav>
 
-  <!-- Plataformas -->
-  <div class="platform" style="left: 200px; top: 420px; width: 120px;"></div>
-  <div class="platform" style="left: 400px; top: 360px; width: 120px;"></div>
-  <div class="platform" style="left: 600px; top: 300px; width: 120px;"></div>
-  <div class="platform" style="left: 850px; top: 400px; width: 150px;"></div>
-  <div class="platform" style="left: 1100px; top: 350px; width: 150px;"></div>
-  <div class="platform" style="left: 1400px; top: 280px; width: 200px;"></div>
+<!-- MAIN -->
+<main class="main">
 
-  <!-- Meta -->
-  <div id="goal" class="goal" style="left: 1800px; top: 440px;"></div>
+  <!-- APP HEADER -->
+  <div class="app-header">
+    <div class="app-icon">
+      <!-- Chat/connection icon -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+      </svg>
+    </div>
+    <div class="app-info">
+      <h1>Joc de plataforma DEMO</h1>
+      <div class="developer">Iñaqui Insaurralde</div>
+    </div>
+  </div>
+
+
+  <!-- INSTALL BUTTON -->
+  <button class="btn-install">Obrir web</button>
+
+
+  <!-- INFO PILLS -->
+  <div class="info-pills">
+    <div class="pill">
+      <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+      Aquesta app està disponible per al teu dispositiu
+    </div>
+    <div class="pill">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Pots compartir-la amb la teva institució educativa
+    </div>
+  </div>
+
+  <!-- SCREENSHOTS -->
+  <div class="screenshots-section">
+    <div class="screenshots-wrapper">
+      <!-- Demo GIF (apareix primer, com un vídeo de previsualització) -->
+      <div class="screenshot screenshot-demo">
+        <img src="media/demo.gif" alt="Demo APP_FEMPO" />
+      </div>
+      <div class="screenshot">
+        <img src= "/apps/1r_GSDAM/iñaqui/Media/Screenshot2.png" alt="Captura del joc" />
+      </div>
+      <div class="screenshot">
+        <img src="/apps/1r_GSDAM/iñaqui/Media/Screenshoot3.png" alt="Captura del joc" />
+      </div>
+      <div class="screenshot">
+        <img src="/apps/1r_GSDAM/iñaqui/Media/Screenshoot4.png" alt="Captura de victoria" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section-header">
+    <h2>Sobre aquesta app</h2>
+    <a href="#">
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+    </a>
+  </div>
+
+  <p class="about-text">
+    <strong>Joc de plataforma DEMO</strong> Aquesta és una demo dun joc de plataformes simil Mario Bros fet completament en HTML, CSS i JavaScript
+  </p>
+  <!-- APP INFO -->
+  <div class="app-info-section">
+    <div class="section-header">
+      <h2>Informació de l'app</h2>
+    </div>
+    <div class="info-table">
+      <div class="info-row"><span class="key">Desenvolupador</span><span class="val">Iñaqui Insaurralde</span></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img src="" id="lightboxImg" alt="" />
 </div>
-    <script src="scripts.js"></script>
+
+<script>
+  const lightbox    = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn    = document.getElementById('lightboxClose');
+
+  // Obrir en clicar qualsevol imatge del carrusel
+  document.querySelectorAll('.screenshot img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+
+
+  document.querySelector(".btn-install").addEventListener("click", () => {
+  window.location.href = "juego.html";
+});
+
+  // Tancar
+  closeBtn.addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) lightbox.classList.remove('open');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  });
+</script>
 </body>
 </html>
