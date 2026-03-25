@@ -1,135 +1,303 @@
-    :root {
-        --bg: #f2f2f2;
-        --surface: #ffffff;
-        --surface-strong: #f2f2f2;
-        --primary: #f20505;
-        --primary-dark: #b80404;
-        --secondary: #0d0d0d;
-        --secondary-soft: #f9d6d6;
-        --accent: #f27979;
-        --text: #0d0d0d;
-        --muted: #5f5f5f;
-        --line: rgba(13, 13, 13, 0.08);
-        --shadow: 0 20px 40px rgba(13, 13, 13, 0.12);
-        --radius-xl: 28px;
-        --radius-lg: 22px;
-        --radius-md: 16px;
-        --radius-sm: 12px;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    background: #f8f9fa;
+    color: #202124;
+    font-size: 14px;
+    min-height: 100vh;
+}
+
+/* ── NAV ── */
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    background: #fff;
+    border-bottom: 1px solid #e8eaed;
+    height: 64px;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    margin-right: 32px;
+    flex-shrink: 0;
+}
+
+.nav-brand img,
+footer img {
+    height: 36px;
+}
+
+.nav-brand span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #202124;
+    white-space: nowrap;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 0;
+    height: 100%;
+    flex: 1;
+}
+
+.nav-tabs a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #5f6368;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 20px;
+    height: 100%;
+    border-bottom: 3px solid transparent;
+    transition: color .15s, border-color .15s;
+    white-space: nowrap;
+}
+
+.nav-tabs a:hover {
+    color: #01875f;
+    background: #f8f9fa;
+}
+
+.nav-tabs a.active {
+    color: #01875f;
+    border-bottom-color: #01875f;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+    .nav {
+        padding: 0 12px;
     }
 
-    * {
-        box-sizing: border-box;
+    .nav-brand {
+        margin-right: 16px;
     }
 
-    html {
-        scroll-behavior: smooth;
+    .nav-brand span {
+        display: none;
     }
 
-    body {
-        margin: 0;
-        /* min-height: 100vh; */
-        font-family: "Segoe UI", system-ui, sans-serif;
-        background:
-            radial-gradient(circle at top left, rgba(242, 121, 121, 0.32), transparent 30%),
-            radial-gradient(circle at top right, rgba(242, 5, 5, 0.12), transparent 28%),
-            linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
-        color: var(--text);
-        display: flex;
-        justify-content: center;
-        padding: 18px;
+    .nav-tabs a {
+        padding: 0 12px;
+        font-size: 13px;
     }
+}
 
-    .phone {
-        /* width: min(100%, 390px); */
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(242, 242, 242, 0.98));
-        border: 1px solid rgba(255, 255, 255, 0.75);
-        box-shadow: var(--shadow);
-        border-radius: 36px;
-        overflow: hidden;
-        /* position: relative; */
-        backdrop-filter: blur(12px);
-    }
+/* ── HERO ── */
+.hero {
+    background: linear-gradient(135deg, #01875f 0%, #005c41 100%);
+    color: #fff;
+    padding: 48px 24px;
+    text-align: center;
+}
 
-    .app {
-        padding: 42px 18px 110px;
-    }
+.hero h1 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
 
-    .bottom-nav {
-        border-radius: var(--radius-lg);
-    }
+.hero p {
+    font-size: 15px;
+    opacity: .85;
+}
 
-    .topbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 18px;
-    }
+/* ── MAIN ── */
+.main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+}
 
-    .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
+/* ── SECTION ── */
+.section {
+    margin-bottom: 40px;
+}
 
-    .logo {
-        width: 46px;
-        height: 46px;
-        border-radius: 14px;
-        display: grid;
-        place-items: center;
-        color: white;
-        font-weight: 800;
-        font-size: 1.15rem;
-    }
+.section-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #202124;
+    margin-bottom: 4px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #01875f;
+    display: inline-block;
+}
 
-    .logo img {
-        width: 35px;
-    }
+.section-header-row {
+    margin-bottom: 16px;
+}
 
-    .bottom-nav {
-        position: sticky;
-        left: 0;
-        background: rgba(255, 255, 255, 0.94);
-        border: 1px solid rgba(31, 29, 26, 0.08);
-        box-shadow: 0 14px 30px rgba(31, 29, 26, 0.1);
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding: 4px 8px;
-        /* even smaller outer padding */
-        backdrop-filter: blur(10px);
-        gap: 2px;
-        width: min(100%, 390px);
-    }
+.section-subtitle {
+    font-size: 13px;
+    color: #5f6368;
+    margin-top: 4px;
+}
 
-    .bottom-nav a {
-        text-align: center;
-        padding: 2px 0;
-        /* almost no vertical padding */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1px;
-        /* tiny gap between image and text */
-        line-height: 1;
-        /* prevent extra line height */
-        color: black;
-        font-style: normal;
-    }
+/* ── EMPTY STATE ── */
+.empty-state {
+    background: #fff;
+    border: 1px dashed #dadce0;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    color: #202124;
+    font-size: 14px;
+}
 
-    .bottom-nav img {
-        width: 2vw;
-        display: block;
-        /* removes any inline image spacing */
-        margin: 0;
-        /* make sure no default margin */
-    }
+.empty-state svg {
+    width: 40px;
+    height: 40px;
+    fill: #dadce0;
+    margin-bottom: 12px;
+}
 
-    .bottom-nav a p, .bottom-nav a div {
-        margin: 0;
-        margin-bottom: 10px;
-        /* in case text is inside a span/p */
-        padding: 0;
-        font-size: 0.75rem;
-        /* optional: smaller text if needed */
-    }
+/* ── COURSE DESC ── */
+.course-desc {
+    font-size: 14px;
+    color: #3c4043;
+    line-height: 1.6;
+}
+
+/* ── APP GRID ── */
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+/* ── APP CARD ── */
+.app-card {
+    background: #fff;
+    border: 1px solid #e8eaed;
+    border-radius: 12px;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: box-shadow .2s, transform .15s;
+    cursor: pointer;
+}
+
+.app-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
+    transform: translateY(-2px);
+}
+
+.card-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+}
+
+.card-icon svg {
+    width: 38px;
+    height: 38px;
+    fill: #fff;
+}
+
+.card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-icon.blue {
+    background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+}
+
+.card-icon.orange {
+    background: linear-gradient(135deg, #e65100 0%, #bf360c 100%);
+}
+
+.card-icon.purple {
+    background: linear-gradient(135deg, #6a1b9a 0%, #4a148c 100%);
+}
+
+.card-icon.teal {
+    background: linear-gradient(135deg, #00695c 0%, #004d40 100%);
+}
+
+.card-icon.white {
+    background: #f1f3f4;
+    border: 1px solid #e8eaed;
+}
+
+.card-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #202124;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+}
+
+.card-developer {
+    font-size: 12px;
+    color: #01875f;
+    font-weight: 500;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-badge {
+    font-size: 11px;
+    color: #5f6368;
+    background: #f1f3f4;
+    padding: 3px 8px;
+    border-radius: 20px;
+}
+
+.card-arrow {
+    width: 18px;
+    height: 18px;
+    fill: #bdc1c6;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    left: 10%;
+    width: 100%;
+    background-color: white;
+    height: 10vh;
+    padding: 10px;
+    border-radius: 10px;
+}
