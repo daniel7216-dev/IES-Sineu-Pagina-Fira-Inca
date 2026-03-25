@@ -1,66 +1,357 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pàgina IES Sineu</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IES Sineu – AppStore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Roboto", Arial, sans-serif;
+      background: #f8f9fa;
+      color: #202124;
+      font-size: 14px;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      background: #fff;
+      border-bottom: 1px solid #e8eaed;
+      height: 64px;
+      gap: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      margin-right: 32px;
+      flex-shrink: 0;
+    }
+    .nav-brand img {
+      height: 36px;
+    }
+    .nav-brand span {
+      font-size: 16px;
+      font-weight: 500;
+      color: #202124;
+      white-space: nowrap;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 0;
+      height: 100%;
+      flex: 1;
+    }
+    .nav-tabs a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #5f6368;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 0 20px;
+      height: 100%;
+      border-bottom: 3px solid transparent;
+      transition: color .15s, border-color .15s;
+      white-space: nowrap;
+    }
+    .nav-tabs a:hover {
+      color: #01875f;
+      background: #f8f9fa;
+    }
+    .nav-tabs a.active {
+      color: #01875f;
+      border-bottom-color: #01875f;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #01875f 0%, #005c41 100%);
+      color: #fff;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .hero p {
+      font-size: 15px;
+      opacity: .85;
+    }
+
+    /* ── MAIN ── */
+    .main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      margin-bottom: 40px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: #202124;
+      margin-bottom: 4px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #01875f;
+      display: inline-block;
+    }
+    .section-header-row {
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      font-size: 13px;
+      color: #5f6368;
+      margin-top: 4px;
+    }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      background: #fff;
+      border: 1px dashed #dadce0;
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      color: #9aa0a6;
+      font-size: 14px;
+    }
+    .empty-state svg {
+      width: 40px;
+      height: 40px;
+      fill: #dadce0;
+      margin-bottom: 12px;
+    }
+
+    /* ── APP GRID ── */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    /* ── APP CARD ── */
+    .app-card {
+      background: #fff;
+      border: 1px solid #e8eaed;
+      border-radius: 12px;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: box-shadow .2s, transform .15s;
+      cursor: pointer;
+    }
+    .app-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,.1);
+      transform: translateY(-2px);
+    }
+    .card-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      flex-shrink: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,.15);
+    }
+    .card-icon svg {
+      width: 38px;
+      height: 38px;
+      fill: #fff;
+    }
+    .card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card-icon.blue   { background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%); }
+    .card-icon.orange { background: linear-gradient(135deg, #e65100 0%, #bf360c 100%); }
+    .card-icon.purple { background: linear-gradient(135deg, #6a1b9a 0%, #4a148c 100%); }
+    .card-icon.teal   { background: linear-gradient(135deg, #00695c 0%, #004d40 100%); }
+    .card-icon.white  { background: #f1f3f4; border: 1px solid #e8eaed; }
+
+    .card-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .card-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: #202124;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 4px;
+    }
+    .card-developer {
+      font-size: 12px;
+      color: #01875f;
+      font-weight: 500;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-badge {
+      font-size: 11px;
+      color: #5f6368;
+      background: #f1f3f4;
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+    .card-arrow {
+      width: 18px;
+      height: 18px;
+      fill: #bdc1c6;
+    }
+  </style>
 </head>
-
 <body>
-    <h1>
-        <table>
-            <tr>
-                <td>
-                    <img src="media/logo.png" alt="img">
-                </td>
-                <td>
-                    Ies sineu
-                </td>
-            </tr>
-            <tr>
-                <td>
-                </td>
-                <td>
-                    Dep informatica
-                </td>
-            </tr>
-        </table>
-    </h1>
-    <div class="topnav">
-        <a href="#home" class="active">Logo</a>
-        <!-- Navigation links (hidden by default) -->
-        <div id="myLinks">
-            <a href="pages/centre.html">Centre</a>
-            <a href="pages/departament.html">Departament</a>
-            <a href="pages/certificats.html">Certificats</a>
-        </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="menu()">
-            <i class="fa fa-bars"></i>
-        </a>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <img src="media/logo.png" alt="IES Sineu" />
+    <span>IES Sineu Apps</span>
+  </a>
+  <div class="nav-tabs">
+    <a href="pages/centre.html">Centre</a>
+    <a href="pages/explicacio_joc.html">Guanya un dau</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Fira d'Aplicacions – IES Sineu</h1>
+  <p>Descobreix les aplicacions creades per l'alumnat dels cicles formatius</p>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- 1r Grau Mitjà -->
+  <div class="section">
+    <div class="section-header-row">
+      <div class="section-title">1r Grau Mitjà</div>
+      <div class="section-subtitle">Aplicacions del primer curs de Grau Mitjà</div>
     </div>
+    <div class="empty-state">
+      <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+      <div>Encara no hi ha aplicacions en aquesta categoria</div>
+    </div>
+  </div>
 
-    <h2>
-        Marc Mas
-    </h2>
-    <table>
-        <td>
-            
-        </td>
-        <td>
-            img2
-        </td>
-        <td>
-            img3
-        </td>
-    </table>
+  <!-- 2n Grau Mitjà -->
+  <div class="section">
+    <div class="section-header-row">
+      <div class="section-title">2n Grau Mitjà</div>
+      <div class="section-subtitle">Aplicacions del segon curs de Grau Mitjà</div>
+    </div>
+    <div class="empty-state">
+      <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+      <div>Encara no hi ha aplicacions en aquesta categoria</div>
+    </div>
+  </div>
 
-    <footer>
-        Pagina fet per l'IES Sineu
-    </footer>
+  <!-- 1r Grau Superior -->
+  <div class="section">
+    <div class="section-header-row">
+      <div class="section-title">1r Grau Superior</div>
+      <div class="section-subtitle">Aplicacions del primer curs de Grau Superior (DAM · ASIX · GSDAM)</div>
+    </div>
+    <div class="apps-grid">
+
+      <!-- APP_FEMPO -->
+      <a class="app-card" href="apps/1r_GSDAM/jaume/APP_FEMPO/index.html">
+        <div class="card-icon blue">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-name">APP_FEMPO</div>
+          <div class="card-developer">Jaume Sampol Alcover</div>
+          <div class="card-footer">
+            <span class="card-badge">FCT / Dual</span>
+            <svg class="card-arrow" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- TalAIot -->
+      <a class="app-card" href="apps/1r_GSDAM/jaume/TalAIot/index.html">
+        <div class="card-icon white">
+          <img src="apps/1r_GSDAM/jaume/TalAIot/media/logo_talaiot_petit.png" alt="TalAIot" />
+        </div>
+        <div class="card-body">
+          <div class="card-name">TalAIot</div>
+          <div class="card-developer">Jaume Sampol Alcover</div>
+          <div class="card-footer">
+            <span class="card-badge">IA · Vigilància</span>
+            <svg class="card-arrow" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- APP_Pirotecnia Jordà -->
+      <a class="app-card" href="apps/1r_GSDAM/Sergi/APP_PIROTECNIA JORDÀ/index.html">
+        <div class="card-icon orange">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-name">APP_Pirotecnia Jordà</div>
+          <div class="card-developer">Sergi Jordà Martorell</div>
+          <div class="card-footer">
+            <span class="card-badge">Empresa familiar</span>
+            <svg class="card-arrow" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- 2n Grau Superior -->
+  <div class="section">
+    <div class="section-header-row">
+      <div class="section-title">2n Grau Superior</div>
+      <div class="section-subtitle">Aplicacions del segon curs de Grau Superior</div>
+    </div>
+    <div class="empty-state">
+      <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+      <div>Encara no hi ha aplicacions en aquesta categoria</div>
+    </div>
+  </div>
+
+</main>
+
 </body>
-
 </html>
