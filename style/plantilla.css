@@ -141,6 +141,10 @@ footer img {
 
 .section-header-row {
     margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
 }
 
 .section-subtitle {
@@ -165,6 +169,111 @@ footer img {
     height: 40px;
     fill: #dadce0;
     margin-bottom: 12px;
+}
+
+/* ── CYCLE SUMMARY ── */
+.cycle-summary {
+    background: #fff;
+    border: 1px solid #e8eaed;
+    border-radius: 12px;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.cycle-summary__desc {
+    font-size: 14px;
+    color: #3c4043;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.cycle-summary__stats {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.cycle-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.cycle-stat__value {
+    font-size: 18px;
+    font-weight: 500;
+    color: #202124;
+}
+
+.cycle-stat__label {
+    font-size: 11px;
+    color: #5f6368;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.cycle-summary__cta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #01875f;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 24px;
+    white-space: nowrap;
+    transition: background .15s;
+    flex-shrink: 0;
+}
+
+.cycle-summary__cta:hover {
+    background: #005c41;
+}
+
+.cycle-summary__cta svg {
+    width: 18px;
+    height: 18px;
+    fill: #fff;
+}
+
+.cycle-stat-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cycle-stat-group__label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #01875f;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+}
+
+.cycle-stat-group__items {
+    display: flex;
+    gap: 24px;
+}
+
+.cycle-stat-group__divider {
+    width: 1px;
+    background: #e8eaed;
+    align-self: stretch;
+    margin: 0 8px;
+}
+
+/* ── SECTION DIVIDER ── */
+.section-divider {
+    border: none;
+    border-top: 2px solid #e8eaed;
+    margin: 8px 0 40px;
 }
 
 /* ── COURSE DESC ── */
