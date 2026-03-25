@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalAIot – Google Play</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <img src="../../../media/logo.png" alt="Logo" style="height:40px;" />
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- APP HEADER -->
+  <div class="app-header">
+    <div class="app-icon" style="background: #ffffff; border: 1px solid #e8eaed;">
+      <!-- Logo TalAIot -->
+      <img src="media/logo_talaiot_petit.png" alt="TalAIot" style="width: 100%; height: 100%; object-fit: contain;" />
+    </div>
+    <div class="app-info">
+      <h1>TalAIot</h1>
+      <div class="developer">Jaume Sampol Alcover</div>
+    </div>
+  </div>
+
+
+  <!-- INSTALL BUTTON -->
+  <button class="btn-install">Descarregar</button>
+
+
+  <!-- INFO PILLS -->
+  <div class="info-pills">
+    <div class="pill">
+      <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+      Protegeix la integritat dels examens amb IA avançada
+    </div>
+    <div class="pill">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Perfecta per a institucions educatives i centres d'examen
+    </div>
+  </div>
+
+  <!-- SCREENSHOTS -->
+  <div class="screenshots-section">
+    <div class="screenshots-wrapper">
+      <!-- Demo GIF (apareix primer, com un vídeo de previsualització) -->
+      <div class="screenshot screenshot-demo">
+        <img src="media/demo.gif" alt="Demo TalAIot" />
+      </div>
+      <div class="screenshot">
+        <img src="media/inici.png" alt="Inici de la sessió" />
+      </div>
+      <div class="screenshot">
+        <img src="media/ia_detectant.png" alt="IA detectant comportaments" />
+      </div>
+      <div class="screenshot">
+        <img src="media/moments_detectats.png" alt="Moments detectats" />
+      </div>
+      <div class="screenshot">
+        <img src="media/revisió_moments.png" alt="Revisió de moments" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section-header">
+    <h2>Sobre aquesta app</h2>
+    <a href="#">
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+    </a>
+  </div>
+
+  <p class="about-text">
+    <strong>TalAIot</strong> és un sistema intelligent d'IA dissenyat per detectar comportaments il·lícits durant examens presencials mitjançant càmeres, protegint sempre la privacitat dels estudiants.
+  </p>
+  <p class="about-text">
+    Utilitza tecnologia de visió per computadora i aprenentatge automàtic per monitoritzar l'activitat durant els examens, identificant comportaments sospitosos com mirar cap a altres llocs, usar dispositius no autoritzats o altres accions irregulars.
+  </p>
+  <p class="about-text">
+    Amb TalAIot podràs:
+  </p>
+  <p class="about-text">
+    • Monitoritzar examens en temps real amb detecció automàtica de comportaments il·lícits.<br>
+    • Revisar momentos detectats amb informes detallats del sistema d'IA.<br>
+    • Mantenir un registre complet de tots els incidents durant l'examen.<br>
+    • Garantir la integritat acadèmica amb privacitat dels estudiants.<br>
+    • Accedir a anàlisis i estadístiques de comportament durant examens.
+  </p>
+
+  <!-- APP INFO -->
+  <div class="app-info-section">
+    <div class="section-header">
+      <h2>Informació de l'app</h2>
+    </div>
+    <div class="info-table">
+      <div class="info-row"><span class="key">Desenvolupador</span><span class="val">Jaume Sampol Alcover</span></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img src="" id="lightboxImg" alt="" />
+</div>
+
+<script>
+  const lightbox    = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn    = document.getElementById('lightboxClose');
+
+  // Obrir en clicar qualsevol imatge del carrusel
+  document.querySelectorAll('.screenshot img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+
+  // Tancar
+  closeBtn.addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) lightbox.classList.remove('open');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  });
+</script>
+</body>
+</html>
