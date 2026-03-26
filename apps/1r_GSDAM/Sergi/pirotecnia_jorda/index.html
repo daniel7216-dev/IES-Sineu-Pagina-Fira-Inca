@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pirotecnia Jordà — IES Sineu</title>
+  <link rel="stylesheet" href="../../../../style/nav.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-root="../../../../">
+
+  <div id="site-nav"></div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- APP HEADER -->
+  <div class="app-header">
+    <div class="app-icon" style="background:#fff; border:1px solid #e8eaed;">
+      <img src="media/logo.png" alt="Pirotecnia Jordà" style="width:100%;height:100%;object-fit:contain;" />
+    </div>
+    <div class="app-info">
+      <h1>Pirotecnia Jordà</h1>
+      <div class="developer">Sergi Jordà Martorell</div>
+    </div>
+  </div>
+
+
+  <!-- INSTALL BUTTON -->
+  <button class="btn-install">Mostrar</button>
+
+
+  <!-- INFO PILLS -->
+  <div class="info-pills">
+    <div class="pill">
+      <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+      Aquesta app es una beta i està en fase de desenvolupament, per tant pot contenir errors o funcionalitats incompletes.
+    </div>
+    <div class="pill">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Informacio sobre la pirotecnia Jordà: Empresa familiar amb més de 50 anys d'experiència en el sector de la pirotècnia, especialitzada en la creació de focs artificials i espectacles pirotècnics a mida.
+    </div>
+  </div>
+
+  <!-- SCREENSHOTS -->
+  <div class="screenshots-section">
+    <div class="screenshots-wrapper">
+      <!-- Demo GIF (apareix primer, com un vídeo de previsualització) -->
+      <div class="screenshot screenshot-demo">
+        <img src="/apps/1r_GSDAM/Sergi/APP_PIROTECNIA JORDÀ/media/jordi.gif.gif" alt="Demo APP_FEMPO" />
+      </div>
+      <div class="screenshot">
+        <img src="media/index entrada .png" alt="Inici de sessió" />
+      </div>
+      <div class="screenshot">
+        <img src="media/historia.png" alt="Historia" />
+      </div>
+      <div class="screenshot">
+        <img src="media/petardos.png" alt="petardos/fonts" />
+      </div>
+      <div class="screenshot">
+        <img src="media/Voladors.png" alt="Voladors" />
+      </div>
+      <div class="screenshot">
+        <img src="media/baterias.png" alt="Baterias" />
+      </div>
+      <div class="screenshot">
+        <img src="media/contacte.png" alt="contactes" />
+      </div>
+      <div class="screenshot">
+        <img src="media/horarios.png" alt="Horari" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section-header">
+    <h2>Sobre aquesta app</h2>
+    <a href="#">
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+    </a>
+  </div>
+
+  <p class="about-text">
+    <strong>APP_Pirotecnia Jordà</strong> Es una pagina web que serveix per informar als clients dels diferents productes i informacio soble la empresa Pirotecnia Jordà
+  </p>
+  <p class="about-text">
+    Amb APP_Pirotecnia Jordà podràs:
+  </p>
+  <p class="about-text">
+    • Comunicar-te amb la empresa.<br>
+    • Registrar i consultar informació.<br>
+    • Fer el seguiment dels productes.<br>
+  </p>
+
+  <!-- APP INFO -->
+  <div class="app-info-section">
+    <div class="section-header">
+      <h2>Informació de l'app</h2>
+    </div>
+    <div class="info-table">
+      <div class="info-row"><span class="key">Desenvolupador</span><span class="val">Sergi Jordà Martorell</span></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img src="" id="lightboxImg" alt="" />
+</div>
+
+<script>
+  const lightbox    = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn    = document.getElementById('lightboxClose');
+
+  // Obrir en clicar qualsevol imatge del carrusel
+  document.querySelectorAll('.screenshot img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+
+  // Tancar
+  closeBtn.addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) lightbox.classList.remove('open');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  });
+</script>
+<script src="../../../../js/components.js"></script>
+</body>
+</html>

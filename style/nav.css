@@ -1,0 +1,172 @@
+/* ─────────────────────────────────────────
+   nav.css — Shared nav + footer styles
+   Include this in any page that uses
+   js/components.js for the shared header/footer
+   ───────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* ── NAV ── */
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    background: #fff;
+    border-bottom: 1px solid #e8eaed;
+    height: 64px;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    margin-right: 32px;
+    flex-shrink: 0;
+}
+
+.nav-brand img {
+    height: 36px;
+}
+
+.nav-brand span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #202124;
+    white-space: nowrap;
+}
+
+#main-nav .nav-tabs {
+    display: flex;
+    gap: 0;
+    height: 100%;
+    flex: 1;
+}
+
+#main-nav .nav-tabs a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #5f6368;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 20px;
+    height: 100%;
+    border-bottom: 3px solid transparent;
+    transition: color .15s, border-color .15s;
+    white-space: nowrap;
+}
+
+#main-nav .nav-tabs a:hover {
+    color: #01875f;
+    background: #f8f9fa;
+}
+
+#main-nav .nav-tabs a.active {
+    color: #01875f;
+    border-bottom-color: #01875f;
+}
+
+/* ── HAMBURGER ── */
+#main-nav .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: auto;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+#main-nav .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #5f6368;
+    border-radius: 2px;
+    transition: transform .25s, opacity .25s;
+}
+
+#main-nav .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#main-nav .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+#main-nav .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    #main-nav {
+        padding: 0 16px;
+    }
+
+    #main-nav .nav-brand {
+        margin-right: 0;
+    }
+
+    #main-nav .nav-hamburger {
+        display: flex;
+    }
+
+    #main-nav .nav-tabs {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-bottom: 1px solid #e8eaed;
+        flex-direction: column;
+        padding: 8px 0;
+        z-index: 99;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+        height: auto;
+    }
+
+    #main-nav .nav-tabs.open {
+        display: flex;
+    }
+
+    #main-nav .nav-tabs a {
+        padding: 14px 24px;
+        height: auto;
+        border-bottom: none;
+        border-left: 3px solid transparent;
+    }
+
+    #main-nav .nav-tabs a:hover {
+        border-left-color: #dadce0;
+    }
+
+    #main-nav .nav-tabs a.active {
+        border-bottom: none;
+        border-left-color: #01875f;
+    }
+}
+
+/* ── FOOTER ── */
+footer,
+.site-footer {
+    background: #fff;
+    border-top: 1px solid #e8eaed;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #5f6368;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+footer img,
+.site-footer img {
+    height: 24px;
+    opacity: .7;
+}

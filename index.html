@@ -4,66 +4,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IES Sineu - AppStore</title>
+  <title>IES Sineu - Fira d'Aplicacions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
 </head>
 
-<body>
-  <!-- NAV -->
-  <nav class="nav">
-    <a class="nav-brand" href="index.html">
-      <img src="media/logo.png" alt="IES Sineu" />
-      <span>IES Sineu Apps</span>
-    </a>
-    <div class="nav-tabs">
-      <a href="pages/centre.html">Centre</a>
-      <a href="pages/explicacio_joc.html">Guanya un dau</a>
-      <a href="apps/1r_GSDAM/Kanhai/dam_moduls.html">Mòduls DAM</a>
-    </div>
-  </nav>
+<body data-root="./">
+
+  <div id="site-nav"></div>
 
   <!-- HERO -->
   <div class="hero">
-    <h1>Fira d'Aplicacions - IES Sineu</h1>
+    <h1>Fira d'Aplicacions — IES Sineu</h1>
     <p>Descobreix les aplicacions creades per l'alumnat dels cicles formatius</p>
   </div>
 
   <!-- MAIN -->
   <main class="main">
 
-    <!-- TOTES LES APPS -->
+    <!-- APP FEMPO Destacada -->
     <div class="section">
       <div class="section-header-row">
-        <div class="section-title">Totes les apps</div>
-        <div class="section-subtitle">Aplicacions presentades a la Fira</div>
+        <a class="section-btn" href="apps/1r_GSDAM/jaume/APP_FEMPO/">
+          APP FEMPO
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+        </a>
+      </div>
+      <div class="featured-app">
+        <div class="featured-app__info">
+          <div class="featured-app__header">
+            <div class="card-icon blue">
+              <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+            </div>
+            <div>
+              <div class="card-name">APP FEMPO</div>
+              <div class="card-developer">Jaume Sampol Alcover</div>
+            </div>
+          </div>
+          <p class="featured-app__desc">
+            Aplicació mòbil per gestionar les pràctiques FCT/Dual. Connecta professorat, alumnat i empresa en un sol espai: xat en temps real, registre de jornades i seguiment dels Resultats d'Aprenentatge.
+          </p>
+        </div>
+        <div class="featured-app__screenshots" id="featuredScreenshots">
+          <img src="apps/1r_GSDAM/jaume/APP_FEMPO/media/demo.gif" alt="Demo APP FEMPO" />
+          <img src="apps/1r_GSDAM/jaume/APP_FEMPO/media/inici de sessió.png" alt="Inici de sessió" />
+          <img src="apps/1r_GSDAM/jaume/APP_FEMPO/media/xat.png" alt="Xat" />
+          <img src="apps/1r_GSDAM/jaume/APP_FEMPO/media/xat_detall.png" alt="Detall del xat" />
+          <img src="apps/1r_GSDAM/jaume/APP_FEMPO/media/registre_jornada.png" alt="Registre de jornada" />
+          <img src="apps/1r_GSDAM/jaume/APP_FEMPO/media/empreses.png" alt="Empreses" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Totes les apps -->
+    <div class="section">
+      <div class="section-header-row">
+        <a class="section-btn" href="apps/">
+          Totes les apps
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+        </a>
       </div>
       <div class="apps-grid">
 
-        <!-- APP_FEMPO -->
-        <a class="app-card" href="apps/1r_GSDAM/jaume/APP_FEMPO/index.html">
-          <div class="card-icon blue">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
-            </svg>
-          </div>
-          <div class="card-body">
-            <div class="card-name">APP_FEMPO</div>
-            <div class="card-developer">Jaume Sampol Alcover</div>
-            <div class="card-footer">
-              <span class="card-badge">FCT / Dual</span>
-              <svg class="card-arrow" viewBox="0 0 24 24">
-                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-              </svg>
-            </div>
-          </div>
-        </a>
-
         <!-- TalAIot -->
-        <a class="app-card" href="apps/1r_GSDAM/jaume/TalAIot/index.html">
+        <a class="app-card" href="apps/1r_GSDAM/jaume/TalAIot/">
           <div class="card-icon white">
             <img src="apps/1r_GSDAM/jaume/TalAIot/media/logo_talaiot_petit.png" alt="TalAIot" />
           </div>
@@ -72,29 +78,37 @@
             <div class="card-developer">Jaume Sampol Alcover</div>
             <div class="card-footer">
               <span class="card-badge">IA · Vigilància</span>
-              <svg class="card-arrow" viewBox="0 0 24 24">
-                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-              </svg>
+              <svg class="card-arrow" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
             </div>
           </div>
         </a>
 
-        <!-- APP_Pirotecnia Jordà -->
-        <a class="app-card" href="apps/1r_GSDAM/Sergi/APP_PIROTECNIA JORDÀ/index.html">
-          <div class="card-icon orange">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
-            </svg>
+        <!-- Tres en Ratlla -->
+        <a class="app-card" href="apps/1r_GSDAM/Llorenc/">
+          <div class="card-icon white">
+            <img src="apps/1r_GSDAM/Llorenc/media/logo.png" alt="Tres en Ratlla" />
           </div>
           <div class="card-body">
-            <div class="card-name">APP_Pirotecnia Jordà</div>
-            <div class="card-developer">Sergi Jordà Martorell</div>
+            <div class="card-name">Tres en Ratlla</div>
+            <div class="card-developer">Llorenç Gaya Pasqual</div>
             <div class="card-footer">
-              <span class="card-badge">Empresa familiar</span>
-              <svg class="card-arrow" viewBox="0 0 24 24">
-                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-              </svg>
+              <span class="card-badge">Joc · Estratègia</span>
+              <svg class="card-arrow" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Veure totes les apps -->
+        <a class="app-card" href="apps/">
+          <div class="card-icon green">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM11 19.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54C17.45 16.19 16.3 16 15 16v-1c0-1.1-.9-2-2-2h-4v-2h2c.55 0 1-.45 1-1v-2h2c1.1 0 2-.9 2-2V5.08C19.92 6.51 21 9.1 21 12c0 2.12-.74 4.07-1.96 5.61l-.14-.22z" fill="white"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Totes les apps</div>
+            <div class="card-developer">Fira d'Aplicacions IES Sineu</div>
+            <div class="card-footer">
+              <span class="card-badge">7 apps</span>
+              <svg class="card-arrow" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
             </div>
           </div>
         </a>
@@ -102,33 +116,73 @@
       </div>
     </div>
 
-    <!-- 1r Grau Mitjà -->
+    <!-- Guanya un dau -->
     <div class="section">
       <div class="section-header-row">
-        <div class="section-title">1r Grau Mitjà</div>
-        <div class="section-subtitle">Aplicacions del primer curs de Grau Mitjà</div>
+        <a class="section-btn" href="joc/">
+          Guanya un dau
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+        </a>
       </div>
-      <div class="empty-state">
-        <div>Alumnat del primer curs dels cicles de Grau Mitjà de l'IES Sineu.</div>
+      <div class="cycle-summary">
+        <div class="cycle-summary__info">
+          <p class="cycle-summary__desc">
+            Identifica animals autòctons de les Illes Balears, encerta el seu nom i suma punts. Arriba a la puntuació objectiu, ensenya la pantalla a l'estand i guanya un premi!
+          </p>
+        </div>
+        <a class="cycle-summary__cta" href="joc/">
+          Jugar ara
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+        </a>
       </div>
     </div>
 
-    <!-- 2n Grau Mitjà -->
+    <!-- Grau Mitjà SMX -->
     <div class="section">
       <div class="section-header-row">
-        <div class="section-title">2n Grau Mitjà</div>
-        <div class="section-subtitle">Aplicacions del segon curs de Grau Mitjà</div>
+        <a class="section-btn" href="grau_mitja/">
+          Grau Mitjà — SMX
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+        </a>
       </div>
-      <div class="empty-state">
-        <div>Alumnat del segon curs dels cicles de Grau Mitjà de l'IES Sineu.</div>
+      <div class="cycle-summary">
+        <div class="cycle-summary__info">
+          <p class="cycle-summary__desc">
+            Cicle formatiu de grau mitjà en Informàtica i Comunicacions. L'alumnat instal·la, configura i manté equips informàtics i xarxes locals.
+          </p>
+          <div class="cycle-summary__stats">
+            <div class="cycle-stat">
+              <span class="cycle-stat__value">11</span>
+              <span class="cycle-stat__label">Mòduls</span>
+            </div>
+            <div class="cycle-stat">
+              <span class="cycle-stat__value">2.000h</span>
+              <span class="cycle-stat__label">Lectives</span>
+            </div>
+            <div class="cycle-stat">
+              <span class="cycle-stat__value">400h</span>
+              <span class="cycle-stat__label">FCT</span>
+            </div>
+            <div class="cycle-stat">
+              <span class="cycle-stat__value">2</span>
+              <span class="cycle-stat__label">Cursos</span>
+            </div>
+          </div>
+        </div>
+        <a class="cycle-summary__cta" href="grau_mitja/">
+          Veure tots els mòduls
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+        </a>
       </div>
     </div>
 
     <!-- Grau Superior DAM -->
     <div class="section">
       <div class="section-header-row">
-        <div class="section-title">Grau Superior — DAM</div>
-        <div class="section-subtitle">Desenvolupament d'Aplicacions Multiplataforma (IFC32) · 1r i 2n curs</div>
+        <a class="section-btn" href="grau_superior/">
+          Grau Superior — DAM
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+        </a>
       </div>
       <div class="cycle-summary">
         <div class="cycle-summary__info">
@@ -154,21 +208,60 @@
             </div>
           </div>
         </div>
-        <a class="cycle-summary__cta" href="apps/1r_GSDAM/Kanhai/dam_moduls.html">
+        <a class="cycle-summary__cta" href="grau_superior/">
           Veure tots els mòduls
           <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
         </a>
       </div>
     </div>
 
-    <footer>
-      <div>
-        <img src="media/logo.png" alt="IES Sineu">
-        <span>Pagina feta per l'IES Sineu</span>
-      </div>
-    </footer>
   </main>
 
+  <div id="site-footer"></div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <img src="" id="lightboxImg" alt="" />
+  </div>
+
+  <script>
+    const lb     = document.getElementById('lightbox');
+    const lbImg  = document.getElementById('lightboxImg');
+    const lbClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.featured-app__screenshots img').forEach(img => {
+      img.addEventListener('click', () => {
+        const src = img.src;
+        lbImg.src = src;
+        lbImg.alt = img.alt;
+        lb.classList.add('open');
+        lb._thumb = img;
+        // Si és GIF, aturar la miniatura mentre el lightbox és obert
+        if (src.toLowerCase().includes('.gif')) {
+          img.dataset.origSrc = src;
+          img.src = '';
+        }
+      });
+    });
+
+    function closeLb() {
+      lb.classList.remove('open');
+      lbImg.src = '';
+      const thumb = lb._thumb;
+      if (thumb && thumb.dataset.origSrc) {
+        thumb.src = thumb.dataset.origSrc;
+        delete thumb.dataset.origSrc;
+      }
+      lb._thumb = null;
+    }
+
+    lbClose.addEventListener('click', closeLb);
+    lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+  </script>
+
+  <script src="js/components.js"></script>
 </body>
 
 </html>
