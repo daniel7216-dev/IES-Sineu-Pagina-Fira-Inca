@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>APP_FEMPO - Google Play</title>
+  <title>APP FEMPO — IES Sineu</title>
+  <link rel="stylesheet" href="../../../../style/nav.css">
   <link rel="stylesheet" href="app.css">
 </head>
-<body>
+<body data-root="../../../../">
 
-<!-- NAV -->
-<nav class="nav">
-  <img src="../../../media/logo.png" alt="Logo" style="height:40px;" />
-</nav>
+  <div id="site-nav"></div>
 
 <!-- MAIN -->
 <main class="main">
@@ -25,7 +23,7 @@
       </svg>
     </div>
     <div class="app-info">
-      <h1>APP_FEMPO</h1>
+      <h1>APP FEMPO</h1>
       <div class="developer">Jaume Sampol Alcover</div>
     </div>
   </div>
@@ -50,28 +48,13 @@
   <!-- SCREENSHOTS -->
   <div class="screenshots-section">
     <div class="screenshots-wrapper">
-      <!-- Demo GIF (apareix primer, com un vídeo de previsualització) -->
-      <div class="screenshot screenshot-demo">
-        <img src="media/demo.gif" alt="Demo APP_FEMPO" />
-      </div>
-      <div class="screenshot">
-        <img src="media/inici de sessió.png" alt="Inici de sessió" />
-      </div>
-      <div class="screenshot">
-        <img src="media/xat.png" alt="Xat" />
-      </div>
-      <div class="screenshot">
-        <img src="media/xat_detall.png" alt="Detall del xat" />
-      </div>
-      <div class="screenshot">
-        <img src="media/consular_ra-s_alumne.png" alt="Consultar RA's alumne" />
-      </div>
-      <div class="screenshot">
-        <img src="media/registre_jornada.png" alt="Registre de jornada" />
-      </div>
-      <div class="screenshot">
-        <img src="media/empreses.png" alt="Empreses" />
-      </div>
+      <img src="media/demo.gif" alt="Demo APP FEMPO" />
+      <img src="media/inici de sessió.png" alt="Inici de sessió" />
+      <img src="media/xat.png" alt="Xat" />
+      <img src="media/xat_detall.png" alt="Detall del xat" />
+      <img src="media/consular_ra-s_alumne.png" alt="Consultar RA's alumne" />
+      <img src="media/registre_jornada.png" alt="Registre de jornada" />
+      <img src="media/empreses.png" alt="Empreses" />
     </div>
   </div>
 
@@ -125,22 +108,40 @@
   const closeBtn    = document.getElementById('lightboxClose');
 
   // Obrir en clicar qualsevol imatge del carrusel
-  document.querySelectorAll('.screenshot img').forEach(img => {
+  document.querySelectorAll('.screenshots-wrapper img').forEach(img => {
     img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
+      const src = img.src;
+      lightboxImg.src = src;
       lightboxImg.alt = img.alt;
       lightbox.classList.add('open');
+      lightbox._thumb = img;
+      // Si és un GIF, aturar el del carrusel mentre el lightbox és obert
+      // (evita descodificar dos GIFs grans en paral·lel)
+      if (src.toLowerCase().includes('.gif')) {
+        img.dataset.origSrc = src;
+        img.src = '';
+      }
     });
   });
 
-  // Tancar
-  closeBtn.addEventListener('click', () => lightbox.classList.remove('open'));
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) lightbox.classList.remove('open');
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') lightbox.classList.remove('open');
-  });
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    // Alliberar el GIF del lightbox
+    lightboxImg.src = '';
+    // Restaurar el GIF del carrusel si estava aturat
+    const thumb = lightbox._thumb;
+    if (thumb && thumb.dataset.origSrc) {
+      thumb.src = thumb.dataset.origSrc;
+      delete thumb.dataset.origSrc;
+    }
+    lightbox._thumb = null;
+  }
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
+
+<script src="../../../../js/components.js"></script>
 </body>
 </html>
