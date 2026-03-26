@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La paraula del dia — IES Sineu</title>
-  <link rel="stylesheet" href="../../../../style/nav.css">
+  <link rel="stylesheet" href="/style/nav.css">
   <link rel="stylesheet" href="app.css">
   <script src="script.js"></script>
 </head>
@@ -31,7 +31,11 @@
 
 
     <!-- INSTALL BUTTON -->
-    <button class="btn-install">Descarregar</button>
+    <button class="btn-install">
+      <a href="app.zip" class="a-install">
+        Descarregar
+      </a>
+    </button>
 
 
     <!-- INFO PILLS -->
@@ -41,7 +45,7 @@
           <path
             d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" />
         </svg>
-        Un joc d'endevinar paraules relacionades amb l'informàtica!
+        Aquest joc només es compatible per ordinadors
       </div>
     </div>
 
@@ -50,19 +54,16 @@
       <div class="screenshots-wrapper">
         <!-- Demo GIF (apareix primer, com un vídeo de previsualització) -->
         <div class="screenshot screenshot-demo">
-          <img src="media/demo.gif" alt="Demo TalAIot" />
+          <img src="media/demo.gif" alt="Demo Wordle" />
         </div>
         <div class="screenshot">
-          <img src="media/inici.png" alt="Inici de la sessió" />
+          <img src="media/jugant.png" alt="Imatge del joc" />
         </div>
         <div class="screenshot">
-          <img src="media/ia_detectant.png" alt="IA detectant comportaments" />
+          <img src="media/registre.png" alt="Imatge del registre" />
         </div>
         <div class="screenshot">
-          <img src="media/moments_detectats.png" alt="Moments detectats" />
-        </div>
-        <div class="screenshot">
-          <img src="media/revisió_moments.png" alt="Revisió de moments" />
+          <img src="media/puntuacio.png" alt="Imatge de les puntuacions" />
         </div>
       </div>
     </div>
